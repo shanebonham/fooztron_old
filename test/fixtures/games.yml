@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  white_offense: 
+  white_defense: 
+  blue_offense: 
+  blue_defense: 
+
+two:
+  white_offense: 
+  white_defense: 
+  blue_offense: 
+  blue_defense: 

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>White offense:</b>
+  <%= @game.white_offense %>
+</p>
+
+<p>
+  <b>White defense:</b>
+  <%= @game.white_defense %>
+</p>
+
+<p>
+  <b>Blue offense:</b>
+  <%= @game.blue_offense %>
+</p>
+
+<p>
+  <b>Blue defense:</b>
+  <%= @game.blue_defense %>
+</p>
+
+<p>
+  <b>White score:</b>
+  <%= @game.white_score %>
+</p>
+
+<p>
+  <b>Blue score:</b>
+  <%= @game.blue_score %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
