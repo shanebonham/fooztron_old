@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426001208) do
+ActiveRecord::Schema.define(:version => 20120426001104) do
 
   create_table "games", :force => true do |t|
     t.integer  "white_offense_id"
     t.integer  "white_defense_id"
     t.integer  "blue_offense_id"
     t.integer  "blue_defense_id"
+    t.integer  "white_score"
+    t.integer  "blue_score"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-    t.decimal  "blue_score"
-    t.decimal  "white_score"
   end
 
   add_index "games", ["blue_defense_id"], :name => "index_games_on_blue_defense_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120426001208) do
 
   create_table "players", :force => true do |t|
     t.string   "name"
+    t.boolean  "hidden"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
