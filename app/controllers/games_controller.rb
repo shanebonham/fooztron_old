@@ -25,6 +25,7 @@ class GamesController < ApplicationController
   # GET /games/new.json
   def new
     @game = Game.new
+    @players = Player.all
 
     respond_to do |format|
       format.html # new.html.erb

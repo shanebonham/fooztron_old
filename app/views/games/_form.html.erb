@@ -13,26 +13,26 @@
 
   <div class="field">
     <%= f.label :white_offense %><br />
-    <%= f.text_field :white_offense %>
+    <%= f.select :white_offense_id, options_from_collection_for_select(@players, 'id', 'name') %>
   </div>
   <div class="field">
     <%= f.label :white_defense %><br />
-    <%= f.text_field :white_defense %>
+    <%= f.select :white_defense_id, options_from_collection_for_select(@players, 'id', 'name') %>
   </div>
   <div class="field">
     <%= f.label :blue_offense %><br />
-    <%= f.text_field :blue_offense %>
+    <%= f.select :blue_offense_id, options_from_collection_for_select(@players, 'id', 'name') %>
   </div>
   <div class="field">
     <%= f.label :blue_defense %><br />
-    <%= f.text_field :blue_defense %>
+    <%= f.select :blue_defense_id, options_from_collection_for_select(@players, 'id', 'name') %>
   </div>
   <div class="field">
     <%= f.label :white_score %><br />
-    <%= f.text_field :white_score %>
+    <%= f.select :white_score, options_for_select(0..10) %>
   </div>  <div class="field">
     <%= f.label :blue_score %><br />
-    <%= f.text_field :blue_score %>
+    <%= f.select :blue_score, options_for_select(0..10) %>
   </div>
   <div class="actions">
     <%= f.submit %>
