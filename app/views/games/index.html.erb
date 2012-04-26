@@ -15,10 +15,10 @@
 
 <% @games.each do |game| %>
   <tr>
-    <td><%= game.white_offense.name %></td>
-    <td><%= game.white_defense.name %></td>
-    <td><%= game.blue_offense.name %></td>
-    <td><%= game.blue_defense.name %></td>
+    <td><%= game.game_players[0].player_id %></td>
+    <td><%= game.game_players[1].player_id %></td>
+    <td><%= game.game_players[2].player_id %></td>
+    <td><%= game.game_players[3].player_id %></td>
     <td><%= game.white_score %></td>
     <td><%= game.blue_score %></td>
 

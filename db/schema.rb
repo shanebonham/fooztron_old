@@ -11,23 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426001104) do
+ActiveRecord::Schema.define(:version => 20120426194253) do
 
-  create_table "games", :force => true do |t|
-    t.integer  "white_offense_id"
-    t.integer  "white_defense_id"
-    t.integer  "blue_offense_id"
-    t.integer  "blue_defense_id"
-    t.integer  "white_score"
-    t.integer  "blue_score"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+  create_table "game_players", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "game_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "games", ["blue_defense_id"], :name => "index_games_on_blue_defense_id"
-  add_index "games", ["blue_offense_id"], :name => "index_games_on_blue_offense_id"
-  add_index "games", ["white_defense_id"], :name => "index_games_on_white_defense_id"
-  add_index "games", ["white_offense_id"], :name => "index_games_on_white_offense_id"
+  add_index "game_players", ["game_id"], :name => "index_game_players_on_game_id"
+  add_index "game_players", ["player_id"], :name => "index_game_players_on_player_id"
+
+  create_table "games", :force => true do |t|
+    t.integer  "white_score"
+    t.integer  "blue_score"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.string   "name"
