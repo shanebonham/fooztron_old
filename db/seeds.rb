@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+players = Player.create([{ name: 'Shane' }, { name: 'Etienne' }, { name: 'Beau' }, { name: 'Benson' }])
+Game.create(white_offense_id: players[1],
+            white_defense_id: players[3],
+            blue_offense_id: players[2],
+            blue_defense_id: players[0]
+            )
