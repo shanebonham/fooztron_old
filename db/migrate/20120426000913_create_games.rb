@@ -5,6 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.references :white_defense
       t.references :blue_offense
       t.references :blue_defense
+      t.integer :white_score
+      t.integer :blue_score
 
       t.timestamps
     end
