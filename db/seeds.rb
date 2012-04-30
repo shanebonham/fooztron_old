@@ -10,9 +10,8 @@ players = Player.create([{ name: 'Shane' }, { name: 'Etienne' }, { name: 'Beau' 
 game = Game.create(white_score: 1,
                    blue_score: 10
                   )
-
-GamePlayer.create([ {game_id: game.id, player_id: players[0], position: 0},
-                    {game_id: game.id, player_id: players[1], position: 1}, 
-                    {game_id: game.id, player_id: players[2], position: 2}, 
-                    {game_id: game.id, player_id: players[3], position: 3}
+GamePlayer.create([ {game_id: game.id, player_id: players[0].id, position: 0},
+                    {game_id: game.id, player_id: players[1].id, position: 1}, 
+                    {game_id: game.id, player_id: players[2].id, position: 2}, 
+                    {game_id: game.id, player_id: players[3].id, position: 3}
                   ])
