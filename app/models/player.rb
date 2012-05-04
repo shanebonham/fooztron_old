@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
-  has_many :game_players
-  has_many :games, :through => :game_players
+  has_many :played_positions
+  has_many :games, :through => :played_positions
 
   attr_accessible :name, :hidden
 end

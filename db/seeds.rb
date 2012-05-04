@@ -7,11 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 players = Player.create([{ name: 'Shane' }, { name: 'Etienne' }, { name: 'Beau' }, { name: 'Benson' }])
-game = Game.create(white_score: 1,
-                   blue_score: 10
-                  )
-GamePlayer.create([ {game_id: game.id, player_id: players[0].id, position: 0},
-                    {game_id: game.id, player_id: players[1].id, position: 1}, 
-                    {game_id: game.id, player_id: players[2].id, position: 2}, 
-                    {game_id: game.id, player_id: players[3].id, position: 3}
-                  ])
+game = Game.create(white_score: 1, blue_score: 10)
+PlayedPosition.create([{game_id: game.id, player_id: players[0].id, position: 0},
+                       {game_id: game.id, player_id: players[1].id, position: 1},
+                       {game_id: game.id, player_id: players[2].id, position: 2},
+                       {game_id: game.id, player_id: players[3].id, position: 3}
+                      ])

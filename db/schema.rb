@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426194253) do
-
-  create_table "game_players", :force => true do |t|
-    t.integer  "player_id"
-    t.integer  "game_id"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "game_players", ["game_id"], :name => "index_game_players_on_game_id"
-  add_index "game_players", ["player_id"], :name => "index_game_players_on_player_id"
+ActiveRecord::Schema.define(:version => 20120504015448) do
 
   create_table "games", :force => true do |t|
     t.integer  "white_score"
@@ -30,6 +19,17 @@ ActiveRecord::Schema.define(:version => 20120426194253) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "played_positions", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "played_positions", ["game_id"], :name => "index_played_positions_on_game_id"
+  add_index "played_positions", ["player_id"], :name => "index_played_positions_on_player_id"
 
   create_table "players", :force => true do |t|
     t.string   "name"
