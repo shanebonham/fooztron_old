@@ -3,7 +3,7 @@ class CreatePlayedPositions < ActiveRecord::Migration
     create_table :played_positions do |t|
       t.references :game
       t.references :player
-      t.integer :position
+      t.integer :position_cd
 
       t.timestamps
     end

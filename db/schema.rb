@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(:version => 20120504015448) do
   create_table "played_positions", :force => true do |t|
     t.integer  "game_id"
     t.integer  "player_id"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "position_cd"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "played_positions", ["game_id"], :name => "index_played_positions_on_game_id"

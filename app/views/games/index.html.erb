@@ -14,10 +14,20 @@
   </tr>
 <% @games.each do |game| %>
   <tr>
-    <td><%= game.played_positions[0].player_id %></td>
-    <td><%= game.played_positions[1].player_id %></td>
-    <td><%= game.played_positions[2].player_id %></td>
-    <td><%= game.played_positions[3].player_id %></td>
+    <% game.played_positions.each do |p| %>
+      <% if p.position == :white_offense %>
+        <td><%= p.player.name %></td>
+      <% end %>
+      <% if p.position == :white_defense %>
+        <td><%= p.player.name %></td>
+      <% end %>
+      <% if p.position == :blue_offense %>
+        <td><%= p.player.name %></td>
+      <% end %>
+      <% if p.position == :blue_defense %>
+        <td><%= p.player.name %></td>
+      <% end %>
+    <% end %>
     <td><%= game.white_score %></td>
     <td><%= game.blue_score %></td>
 
