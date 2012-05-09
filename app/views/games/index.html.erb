@@ -14,10 +14,9 @@
   </tr>
 <% @games.each do |game| %>
   <tr>
-    <td><%= white_offense_player_name(game) %></td>
-    <td><%= white_defense_player_name(game) %></td>
-    <td><%= blue_offense_player_name(game) %></td>
-    <td><%= blue_defense_player_name(game) %></td>
+    <% game.played_positions.each do |p| %>
+      <td><%= p.player.name %></td>
+    <% end %>
     <td><%= game.white_score %></td>
     <td><%= game.blue_score %></td>
 

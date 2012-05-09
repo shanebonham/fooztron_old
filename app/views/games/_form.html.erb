@@ -1,4 +1,4 @@
-<%= form_for(@game) do |f| %>
+<%= form_for @game do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -11,28 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :white_offense %><br />
-    <%= f.select :white_offense_id, options_from_collection_for_select(@players, 'id', 'name') %>
-  </div>
-  <div class="field">
-    <%= f.label :white_defense %><br />
-    <%= f.select :white_defense_id, options_from_collection_for_select(@players, 'id', 'name') %>
-  </div>
-  <div class="field">
-    <%= f.label :blue_offense %><br />
-    <%= f.select :blue_offense_id, options_from_collection_for_select(@players, 'id', 'name') %>
-  </div>
-  <div class="field">
-    <%= f.label :blue_defense %><br />
-    <%= f.select :blue_defense_id, options_from_collection_for_select(@players, 'id', 'name') %>
-  </div>
+  <%= f.fields_for :played_positions do |p| %>
+    <div class="field">
+      <%= p.label :player_id, p.object.position.to_s.humanize %><br />
+      <%= p.select :player_id, options_from_collection_for_select(@players, 'id', 'name', p.object.player_id), :include_blank => '-- Select a player --' %>
+      <%= p.hidden_field :position %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :white_score %><br />
-    <%= f.select :white_score, options_for_select(0..10) %>
-  </div>  <div class="field">
+    <%= f.select :white_score, options_for_select(10.downto(0), @game.white_score), :include_blank => true %>
+  </div>
+  <div class="field">
     <%= f.label :blue_score %><br />
-    <%= f.select :blue_score, options_for_select(0..10) %>
+    <%= f.select :blue_score, options_for_select(10.downto(0), @game.blue_score), :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,24 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>White offense:</b>
-  <%= white_offense_player_name(@game) %>
-</p>
-
-<p>
-  <b>White defense:</b>
-  <%= white_defense_player_name(@game) %>
-</p>
-
-<p>
-  <b>Blue offense:</b>
-  <%= blue_offense_player_name(@game) %>
-</p>
-
-<p>
-  <b>Blue defense:</b>
-  <%= blue_defense_player_name(@game) %>
-</p>
+<% @game.played_positions.each do |position| %>
+  <p>
+    <b><%= position.position.to_s.humanize %>:</b>
+    <%= position.player.name %>
+  </p>
+<% end %>
 
 <p>
   <b>White score:</b>

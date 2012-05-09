@@ -3,6 +3,9 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+    @games.each do |g|
+      g.played_positions.sort_by! { |p| p.position_cd }
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +17,7 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
+    @game.played_positions.sort_by! { |p| p.position_cd }
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +30,9 @@ class GamesController < ApplicationController
   def new
     @game = Game.new
     @players = Player.all
+    (0..3).each do |position|
+      @game.played_positions.build :position_cd => position
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +43,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
+    @game.played_positions.sort_by! { |p| p.position_cd }
     @players = Player.all
   end
 
