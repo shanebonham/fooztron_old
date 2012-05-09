@@ -7,6 +7,10 @@ gem 'rails', '3.2.3'
 
 gem 'simple_enum', '~> 1.5.1'
 
+group :production do
+  gem 'pg', '0.12.2'
+end
+
 group :development do
   gem 'sqlite3'
 end
