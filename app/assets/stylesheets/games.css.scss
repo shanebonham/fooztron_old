@@ -49,15 +49,11 @@ form#new_game{
   }
 
   .actions{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    margin-left: -50px;
-
+    padding-top: 355px;
+    text-align: center;
     input{
-      width: 100px;
-      height: 50px;
-      font-size: 108px;
+      font-size: 48px;
+      -webkit-appearance: button;
     }
   }
 }
