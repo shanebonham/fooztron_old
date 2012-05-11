@@ -6,4 +6,14 @@ class Game < ActiveRecord::Base
 
   accepts_nested_attributes_for :played_positions
 
+  validates :white_score, :blue_score, :presence => true
+  validate :one_score_must_be_ten
+
+  def one_score_must_be_ten
+    if white_score != 10 && blue_score != 10
+      self.errors[:base] << "One score must be 10"
+    elsif white_score == blue_score
+      self.errors[:base] << "Scores can't be the same"
+    end
+  end
 end
