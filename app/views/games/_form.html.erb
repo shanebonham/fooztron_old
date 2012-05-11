@@ -14,7 +14,7 @@
   <%= f.fields_for :played_positions do |p| %>
     <div class="field">
       <%= p.label :player_id, p.object.position.to_s.humanize %><br />
-      <%= p.select :player_id, options_from_collection_for_select(@players, 'id', 'name', p.object.player_id), :include_blank => '-- Select a player --' %>
+      <%= p.select :player_id, options_from_collection_for_select(@players.sort_by { |p| p.name }, 'id', 'name', p.object.player_id), :include_blank => '-- Select a player --' %>
       <%= p.hidden_field :position %>
     </div>
   <% end %>
