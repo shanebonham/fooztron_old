@@ -1,3 +1,63 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form#new_game{
+  position: relative;
+  width: 597px;
+  height: 400px;
+  background: image-url('pitch.jpg') no-repeat;
+
+  div.field{
+    background: white;
+  }
+
+  #field_white_offense{
+    position: absolute;
+    top: 20px;
+    left: 209px;
+  }
+
+  #field_white_defense{
+    position: absolute;
+    top: 20px;
+    left: 375px;
+  }
+
+  #field_blue_offense{
+    position: absolute;
+    top: 255px;
+    left: 264px;
+  }
+
+  #field_blue_defense{
+    position: absolute;
+    top: 255px;
+    left: 12px;
+  }
+
+  #field_white_score{
+    position: absolute;
+    top: 110px;
+    right: 0px;
+  }
+
+  #field_blue_score{
+    position: absolute;
+    top: 110px;
+    left: 0px;
+  }
+
+  .actions{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -50px;
+
+    input{
+      width: 100px;
+      height: 50px;
+      font-size: 108px;
+    }
+  }
+}

@@ -12,22 +12,22 @@
   <% end %>
 
   <%= f.fields_for :played_positions do |p| %>
-    <div class="field">
+    <div class="field" id="field_<%= p.object.position.to_s %>">
       <%= p.label :player_id, p.object.position.to_s.humanize %><br />
       <%= p.select :player_id, options_from_collection_for_select(@players.sort_by { |p| p.name }, 'id', 'name', p.object.player_id), :include_blank => '-- Select a player --' %>
       <%= p.hidden_field :position %>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="field_white_score">
     <%= f.label :white_score %><br />
     <%= f.select :white_score, options_for_select(10.downto(0), @game.white_score), :include_blank => true %>
   </div>
-  <div class="field">
+  <div class="field" id="field_blue_score">
     <%= f.label :blue_score %><br />
     <%= f.select :blue_score, options_for_select(10.downto(0), @game.blue_score), :include_blank => true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'GAME ON!!!' %>
   </div>
 <% end %>
