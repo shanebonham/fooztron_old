@@ -4,6 +4,7 @@
 
 <table class="game_list">
   <tr>
+    <th>Date</th>
     <th>White offense</th>
     <th>White defense</th>
     <th>Blue offense</th>
@@ -16,6 +17,7 @@
   </tr>
 <% @games.each do |game| %>
   <tr class="winner_<%= game.winner %>">
+    <td><%= game.created_at.strftime('%a, %m/%d/%Y - %I:%M %p') %></td>
     <% game.played_positions.each do |p| %>
       <td class="<%= winner_class game, p.position.to_s.split('_').first %>"><%= p.player.name %></td>
     <% end %>

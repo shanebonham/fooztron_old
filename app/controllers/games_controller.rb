@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.find(:all, :order => 'created_at DESC')
     @games.each do |g|
       g.played_positions.sort_by! { |p| p.position_cd }
     end
