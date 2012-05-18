@@ -16,4 +16,8 @@ class Game < ActiveRecord::Base
       self.errors[:base] << "Scores can't be the same"
     end
   end
+
+  def winner
+    white_score > blue_score ? 'white' : 'blue'
+  end
 end

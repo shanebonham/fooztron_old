@@ -58,3 +58,15 @@ form#new_game{
     }
   }
 }
+
+table.game_list{
+  border-collapse: collapse;
+
+  .winner{
+    font-weight: bold;
+  }
+
+  .winner_blue{
+    background: rgba(0, 0, 255, .25);
+  }
+}

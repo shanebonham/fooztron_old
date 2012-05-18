@@ -51,6 +51,10 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
+    @players = Player.all
+    (0..3).each do |position|
+      @game.played_positions.build :position_cd => position
+    end
 
     respond_to do |format|
       if @game.save
