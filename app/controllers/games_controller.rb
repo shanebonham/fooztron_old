@@ -51,16 +51,17 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    @players = Player.all
-    (0..3).each do |position|
-      @game.played_positions.build :position_cd => position
-    end
 
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render json: @game, status: :created, location: @game }
       else
+        @players = Player.all
+        (0..3).each do |position|
+          @game.played_positions.build :position_cd => position
+        end
+
         format.html { render action: "new" }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
