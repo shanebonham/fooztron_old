@@ -62,6 +62,10 @@ form#new_game{
 table.game_list{
   border-collapse: collapse;
 
+  td, th{
+    padding: 1px 5px;
+  }
+
   .winner{
     font-weight: bold;
   }
