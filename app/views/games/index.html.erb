@@ -20,7 +20,7 @@
     <td><%= game.created_at.strftime('%a') %></td>
     <td><%= game.created_at.strftime('%m/%d/%Y - %I:%M %p') %></td>
     <% game.played_positions.each do |p| %>
-      <td class="<%= winner_class game, p.position.to_s.split('_').first %>"><%= p.player.name %></td>
+      <td class="<%= winner_class game, p.team %>"><%= p.player.name %></td>
     <% end %>
     <td class="<%= winner_class game, 'white' %>"><%= game.white_score %></td>
     <td class="<%= winner_class game, 'blue' %>"><%= game.blue_score %></td>

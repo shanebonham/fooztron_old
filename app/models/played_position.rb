@@ -6,4 +6,12 @@ class PlayedPosition < ActiveRecord::Base
                      :white_defense => 1,
                      :blue_offense => 2,
                      :blue_defense => 3
+
+  def winner?
+    team == game.winner
+  end
+
+  def team
+    position.to_s.split('_').first
+  end
 end
