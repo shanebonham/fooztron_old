@@ -83,6 +83,5 @@ class PlayersController < ApplicationController
 
   def leaderboard
     @players = Player.all
-    
   end
 end

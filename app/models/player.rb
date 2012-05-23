@@ -20,22 +20,6 @@ class Player < ActiveRecord::Base
     end
   end
 
-  def win_percentage_weighted_by_side
-    win_count = 0
-    played_positions.each do |played_position|
-      if played_position.game.winner == 'blue'
-        win_count += (1 - Side.blue_win_percentage) if played_position.winner?
-      else
-        win_count += Side.blue_win_percentage if played_position.winner?
-      end
-    end
-    if total_games_played > 0
-      wins = win_count.to_f / total_games_played.to_f * 100.00
-    else
-      wins = 0
-    end
-  end
-
   def average_winning_spread
     count = 0
     played_positions.each do |played_position|

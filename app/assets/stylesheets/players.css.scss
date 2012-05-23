@@ -1,3 +1,45 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.board{
+  float: left;
+
+  table{
+    border-collapse: collapse;
+  }
+
+  th{
+    padding: 4px;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+
+  th.order{
+    width: 35px;
+    text-align: center;
+  }
+
+  td{
+    padding: 4px;
+  }
+
+  td.order{
+    text-align: center;
+    font-size: 11px;
+  }
+
+  td.stat{
+    text-align: right;
+  }
+
+  tr.top{
+    td.name{
+      font-size: 16px;
+    }
+
+    td.stat{
+      font-size: 16px;
+    }
+  }
+}
