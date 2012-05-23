@@ -11,6 +11,7 @@
     <th>Blue defense</th>
     <th>White score</th>
     <th>Blue score</th>
+    <th>Spread</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,6 +25,7 @@
     <% end %>
     <td class="<%= winner_class game, 'white' %>"><%= game.white_score %></td>
     <td class="<%= winner_class game, 'blue' %>"><%= game.blue_score %></td>
+    <td><%= game.spread %></td>
 
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

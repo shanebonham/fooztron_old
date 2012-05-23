@@ -2,20 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1{
+  a{
+    font-weight: normal;
+    font-size: 12px;
+  }
+}
+
 form#new_game{
   position: relative;
   width: 597px;
-  height: 400px;
+  height: 348px;
   background: image-url('pitch.jpg') no-repeat;
 
   div.field{
     background: white;
+    padding: 3px;
+    border: 3px solid black;
+
+    label{
+      display: block;
+      text-align: center;
+    }
   }
 
   #field_white_offense{
     position: absolute;
     top: 20px;
-    left: 209px;
+    left: 201px;
   }
 
   #field_white_defense{
@@ -27,7 +41,7 @@ form#new_game{
   #field_blue_offense{
     position: absolute;
     top: 255px;
-    left: 264px;
+    left: 256px;
   }
 
   #field_blue_defense{
@@ -40,21 +54,32 @@ form#new_game{
     position: absolute;
     top: 110px;
     right: 0px;
+
+    select{
+      width: 100px;
+    }
   }
 
   #field_blue_score{
     position: absolute;
     top: 110px;
     left: 0px;
+
+    select{
+      width: 100px;
+    }
   }
 
   .actions{
-    padding-top: 355px;
+    position: absolute;
+    top: 123px;
+    left: 153px;
     text-align: center;
 
     input{
       font-size: 48px;
       -webkit-appearance: button;
+      border: 3px solid black;
     }
   }
 }
@@ -71,6 +96,11 @@ table.game_list{
   }
 
   .winner_blue{
-    background: rgba(0, 0, 255, .25);
+    border-top: 1px solid white;
+    background: #BFBFFF;
+  }
+
+  .winner_white{
+    border-top: 1px solid #BFBFFF;
   }
 }

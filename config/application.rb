@@ -57,3 +57,5 @@ module Fooztron
     config.assets.version = '1.0'
   end
 end
+
+require File.join(Rails.root, 'lib/side')

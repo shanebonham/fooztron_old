@@ -1,6 +1,10 @@
 Fooztron::Application.routes.draw do
   resources :games
-  resources :players
+  resources :players do
+    collection do
+      get :leaderboard
+    end
+  end
 
   root :to => 'Games#index'
 

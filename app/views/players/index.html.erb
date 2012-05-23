@@ -6,6 +6,13 @@
   <tr>
     <th>Name</th>
     <th>Win %</th>
+    <th>Win %<br />
+      weighted</th>
+    <!-- <th>As WO</th>
+    <th>As WD</th>
+    <th>As BO</th>
+    <th>As BD</th>
+    <th>Average Winning Spread</th> -->
     <th>Hidden</th>
     <th></th>
     <th></th>
@@ -15,7 +22,13 @@
 <% @players.each do |player| %>
   <tr>
     <td><%= player.name %></td>
-    <td><%= number_to_percentage(player.win_percentage, precision: 0 ) %></td>
+    <td><%= number_to_percentage(player.win_percentage, precision: 0) %></td>
+    <td><%= number_to_percentage(player.win_percentage_weighted_by_side, precision: 0) %></td>
+    <!-- <td><%#= number_to_percentage(player.win_percentage(:white_offense), precision: 0) %></td>
+    <td><%#= number_to_percentage(player.win_percentage(:white_defense), precision: 0) %></td>
+    <td><%#= number_to_percentage(player.win_percentage(:blue_offense), precision: 0) %></td>
+    <td><%#= number_to_percentage(player.win_percentage(:blue_defense), precision: 0) %></td>
+    <td><%#= sprintf("%.1f", player.average_winning_spread) %></td> -->
     <td><%= player.hidden %></td>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
