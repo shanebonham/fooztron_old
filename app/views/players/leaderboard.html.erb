@@ -79,7 +79,7 @@
     <tr>
       <th class="order">&#9733;</th>
       <th class="name">Player</th>
-      <th class="stat">Avg pts allowed/game</th>
+      <th class="stat">Points</th>
     </tr>
     <% sorted_by_points_scored(@players).each_with_index do |player, i| %>
       <tr<%=raw ' class="top"' if i < 3 %>>
@@ -97,7 +97,7 @@
     <tr>
       <th class="order">&#9733;</th>
       <th class="name">Player</th>
-      <th class="stat">Avg pts allowed/game</th>
+      <th class="stat">Points</th>
     </tr>
     <% sorted_by_points_allowed(@players).each_with_index do |player, i| %>
       <tr<%=raw ' class="top"' if i < 3 %>>
