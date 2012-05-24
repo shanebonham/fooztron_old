@@ -25,7 +25,23 @@ class Player < ActiveRecord::Base
     played_positions.each do |played_position|
       count += played_position.game.spread if played_position.winner?
     end
-    average = count / total_games_won.to_f
+    if total_games_played > 0
+      average = count / total_games_won.to_f
+    else
+      average = 0
+    end
+  end
+
+  def average_losing_spread
+    count = 0
+    played_positions.each do |played_position|
+      count += played_position.game.spread if !played_position.winner?
+    end
+    if total_games_played > 0
+      average = count / total_games_lost.to_f
+    else
+      average = 0
+    end
   end
 
   def total_games_played(position = nil)
@@ -44,5 +60,9 @@ class Player < ActiveRecord::Base
     total_wins = 0
     played_positions.map{ |x| total_wins +=1 if x.winner? }
     total_wins
+  end
+
+  def total_games_lost
+    total_games_played - total_games_won
   end
 end
