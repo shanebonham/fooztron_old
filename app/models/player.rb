@@ -25,7 +25,7 @@ class Player < ActiveRecord::Base
     played_positions.each do |played_position|
       count += played_position.game.spread if played_position.winner?
     end
-    if total_games_played > 0
+    if total_games_won > 0
       average = count / total_games_won.to_f
     else
       average = 0
@@ -37,7 +37,7 @@ class Player < ActiveRecord::Base
     played_positions.each do |played_position|
       count += played_position.game.spread if !played_position.winner?
     end
-    if total_games_played > 0
+    if total_games_lost > 0
       average = count / total_games_lost.to_f
     else
       average = 0
