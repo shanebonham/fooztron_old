@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all.sort_by{ |p| -p.win_percentage }
+    @players = Player.all
 
     respond_to do |format|
       format.html # index.html.erb

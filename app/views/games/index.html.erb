@@ -1,6 +1,7 @@
 <h1>Listing games</h1>
 
-<p><%= link_to 'List players', players_path %></p>
+<p><%= link_to 'Leaderboards', '/leaderboard' %> • <%= link_to 'List players', players_path %> • <%= link_to 'New Game', new_game_path %>
+</p>
 
 <table class="game_list">
   <tr>
@@ -33,7 +34,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Game', new_game_path %>

@@ -5,21 +5,18 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Win %</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-<% @players.each do |player| %>
-  <tr>
-    <td><%= player.name %></td>
-    <td><%= number_to_percentage(player.win_percentage, precision: 0) %></td>
-     <td><%= link_to 'Show', player %></td>
-    <td><%= link_to 'Edit', edit_player_path(player) %></td>
-    <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= link_to 'Show', player %></td>
+      <td><%= link_to 'Edit', edit_player_path(player) %></td>
+      <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />

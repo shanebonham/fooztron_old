@@ -4,7 +4,7 @@ class Player < ActiveRecord::Base
 
   attr_accessible :name, :hidden
 
-  def win_percentage(position = nil)
+  def record(position = nil)
     win_count = 0
     played_positions.each do |played_position|
       if position
@@ -14,7 +14,7 @@ class Player < ActiveRecord::Base
       end
     end
     if total_games_played(position) > 0
-      wins = win_count.to_f / total_games_played(position).to_f * 100.00
+      wins = win_count.to_f / total_games_played(position).to_f
     else
       wins = 0
     end
@@ -41,6 +41,8 @@ class Player < ActiveRecord::Base
   end
 
   def total_games_won
-    played_positions.count { |p| p.winner? }
+    total_wins = 0
+    played_positions.map{ |x| total_wins +=1 if x.winner? }
+    total_wins
   end
 end

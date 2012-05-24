@@ -1,6 +1,44 @@
-<div class="board">
-  <h1>Most Games Played</h1>
+<h1>Leaderboards</h1>
+<p><%= link_to 'Back to game list', root_path %></p>
 
+<div class="board">
+  <h2>Best Record</h2>
+  <table>
+    <tr>
+      <th class="order">&#9733;</th>
+      <th class="name">Player</th>
+      <th class="stat">Record</th>
+    </tr>
+    <% sorted_by_record(@players).each_with_index do |player, i| %>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= sprintf('%.3f', player.record).to_s[1..-1] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="board">
+  <h2>Most Wins</h2>
+  <table>
+    <tr>
+      <th class="order">&#9733;</th>
+      <th class="name">Player</th>
+      <th class="stat">Wins</th>
+    </tr>
+    <% sorted_by_wins(@players).each_with_index do |player, i| %>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= player.total_games_won %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="board">
+  <h2>Most Games Played</h2>
   <table>
     <tr>
       <th class="order">&#9733;</th>
@@ -8,11 +46,11 @@
       <th class="stat"># of games</th>
     </tr>
     <% sorted_by_number_of_games(@players).each_with_index do |player, i| %>
-    <tr<%=raw ' class="top"' if i < 3 %>>
-      <td class="order"><%= i + 1 %></td>
-      <td class="name"><%= player.name %></td>
-      <td class="stat"><%= player.games.count %></td>
-    </tr>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= player.games.count %></td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </div>
