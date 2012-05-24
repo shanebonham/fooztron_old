@@ -56,6 +56,12 @@ class Player < ActiveRecord::Base
     game_count
   end
 
+  def total_games_played_as_defender
+    total = 0
+    played_positions.map { |x| total += 1 unless x.offense?}
+    total
+  end
+
   def total_games_won
     total_wins = 0
     played_positions.map{ |x| total_wins +=1 if x.winner? }
@@ -64,5 +70,29 @@ class Player < ActiveRecord::Base
 
   def total_games_lost
     total_games_played - total_games_won
+  end
+
+  def total_points_allowed(defender = false)
+    total = 0
+    if defender
+      played_positions.map { |x| total += x.points_allowed unless x.offense? }
+    else
+      played_positions.map { |x| total += x.points_allowed }
+    end
+    total
+  end
+
+  def total_points_scored
+    total = 0
+    played_positions.map { |x| total += x.points_scored }
+    total
+  end
+
+  def average_points_allowed(defender = false)
+    if total_games_played_as_defender > 0
+      total_points_allowed(true) / total_games_played_as_defender.to_f
+    else
+      0
+    end
   end
 end

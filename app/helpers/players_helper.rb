@@ -20,8 +20,21 @@ module PlayersHelper
     players.sort{ |x, y| y.average_winning_spread <=> x.average_winning_spread }
   end
 
+  def sorted_by_average_points_allowed(players)
+    no_zeros = players.reject{ |x| x.average_points_allowed == 0 }
+    no_zeros.sort{ |x, y| x.average_points_allowed <=> y.average_points_allowed }
+  end
+
   def sorted_by_losing_spread(players)
     no_zeros = players.reject{ |x| x.average_losing_spread == 0 }
-    no_zeros.sort{ |x, y| y.average_losing_spread <=> x.average_losing_spread }
+    no_zeros.sort{ |x, y| x.average_losing_spread <=> y.average_losing_spread }
+  end
+
+  def sorted_by_points_scored(players)
+    players.sort{ |x, y| y.total_points_scored <=> x.total_points_scored }
+  end
+
+  def sorted_by_points_allowed(players)
+    players.sort{ |x, y| y.total_points_allowed <=> x.total_points_allowed }
   end
 end

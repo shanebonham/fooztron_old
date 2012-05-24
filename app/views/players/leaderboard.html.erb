@@ -43,7 +43,7 @@
     <tr>
       <th class="order">&#9733;</th>
       <th class="name">Player</th>
-      <th class="stat">Average Spread</th>
+      <th class="stat">Average spread</th>
     </tr>
     <% sorted_by_winning_spread(@players).each_with_index do |player, i| %>
       <tr<%=raw ' class="top"' if i < 3 %>>
@@ -56,18 +56,72 @@
 </div>
 
 <div class="board">
-  <h2>Worst Losers</h2>
+  <h2>Best Losers</h2>
   <table>
     <tr>
       <th class="order">&#9733;</th>
       <th class="name">Player</th>
-      <th class="stat">Average Spread</th>
+      <th class="stat">Average spread</th>
     </tr>
     <% sorted_by_losing_spread(@players).each_with_index do |player, i| %>
       <tr<%=raw ' class="top"' if i < 3 %>>
         <td class="order"><%= i + 1 %></td>
         <td class="name"><%= player.name %></td>
         <td class="stat"><%= sprintf('%.1f', player.average_losing_spread) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="board">
+  <h2>Most Points Scored</h2>
+  <table>
+    <tr>
+      <th class="order">&#9733;</th>
+      <th class="name">Player</th>
+      <th class="stat">Avg pts allowed/game</th>
+    </tr>
+    <% sorted_by_points_scored(@players).each_with_index do |player, i| %>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= player.total_points_scored %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="board">
+  <h2>Most Points Allowed</h2>
+  <table>
+    <tr>
+      <th class="order">&#9733;</th>
+      <th class="name">Player</th>
+      <th class="stat">Avg pts allowed/game</th>
+    </tr>
+    <% sorted_by_points_allowed(@players).each_with_index do |player, i| %>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= player.total_points_allowed %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="board">
+  <h2>Best Defender</h2>
+  <table>
+    <tr>
+      <th class="order">&#9733;</th>
+      <th class="name">Player</th>
+      <th class="stat">Avg pts allowed/game</th>
+    </tr>
+    <% sorted_by_average_points_allowed(@players).each_with_index do |player, i| %>
+      <tr<%=raw ' class="top"' if i < 3 %>>
+        <td class="order"><%= i + 1 %></td>
+        <td class="name"><%= player.name %></td>
+        <td class="stat"><%= sprintf('%.1f', player.average_points_allowed(true)) %></td>
       </tr>
     <% end %>
   </table>

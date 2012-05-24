@@ -14,4 +14,24 @@ class PlayedPosition < ActiveRecord::Base
   def team
     position.to_s.split('_').first
   end
+
+  def offense?
+    position == :white_offense || position == :blue_offense
+  end
+
+  def points_scored
+    if team == "white"
+      game.white_score
+    else
+      game.blue_score
+    end
+  end
+
+  def points_allowed
+    if team == "white"
+      game.blue_score
+    else
+      game.white_score
+    end
+  end
 end
