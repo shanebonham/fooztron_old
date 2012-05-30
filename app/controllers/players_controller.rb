@@ -82,7 +82,7 @@ class PlayersController < ApplicationController
   end
 
   def leaderboard
-    @players = [];
+    @players = []
     @number_of_games = 1
     if params[:number].present?
       @number_of_games = params[:number].to_i
