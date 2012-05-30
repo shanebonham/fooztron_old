@@ -3,6 +3,7 @@ Fooztron::Application.routes.draw do
   resources :players
   
   match 'leaderboard' => 'players#leaderboard'
+  match 'leaderboard/:number' => 'players#leaderboard'
   root :to => 'Games#index'
 
   # The priority is based upon order of creation:

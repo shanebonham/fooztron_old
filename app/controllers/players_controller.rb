@@ -82,6 +82,17 @@ class PlayersController < ApplicationController
   end
 
   def leaderboard
-    @players = Player.all
+    @players = [];
+    if params[:number].present?
+      number_of_games = params[:number].to_i
+      Player.all.each do |player|
+        if player.total_games_played >= number_of_games
+          @players << player
+        end
+      end
+    else
+      @players = Player.all
+    end
+    @players
   end
 end
