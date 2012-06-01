@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504015448) do
+ActiveRecord::Schema.define(:version => 20120601034619) do
 
   create_table "games", :force => true do |t|
     t.integer  "white_score"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(:version => 20120504015448) do
     t.boolean  "hidden"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "monk_authentication_token"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
 end

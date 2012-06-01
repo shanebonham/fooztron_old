@@ -1,7 +1,10 @@
 Fooztron::Application.routes.draw do
   resources :games
   resources :players
-  
+
+  match 'users/login' => 'users#new'
+  match 'users/signin' => 'users#signin'  
+
   match 'leaderboard' => 'players#leaderboard'
   match 'leaderboard/:number' => 'players#leaderboard'
   root :to => 'Games#index'

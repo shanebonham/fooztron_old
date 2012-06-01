@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'simple_enum', '~> 1.5.1'
 gem 'jquery-rails'
+gem 'monk-id-client', :git => 'https://github.com/MonkDev/monk-id-client.git'
 
 group :production do
   gem 'pg', '0.12.2'

@@ -1,0 +1,13 @@
+# Configuration file for the MonkID registration service
+#
+development:
+  host: '108.171.190.184'
+  port: 443
+  api_key: 88fd09c57fe5995616dbe164f0bdb49b
+  ssl: true
+
+production:
+  host: '108.171.190.184'
+  port: 443
+  api_key: 88fd09c57fe5995616dbe164f0bdb49b
+  ssl: true
