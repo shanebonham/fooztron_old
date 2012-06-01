@@ -1,6 +1,10 @@
 Fooztron::Application.routes.draw do
   resources :games
-  resources :players
+  resources :players do
+    collection do
+      get 'hidden'
+    end
+  end
 
   match 'users/login' => 'users#new'
   match 'users/signin' => 'users#signin'

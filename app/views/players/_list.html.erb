@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <% if current_user.present? && current_user.admin? %>
+      <th></th>
+      <th></th>
+    <% end %>
+  </tr>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= link_to player.name, player %></td>
+      <% if current_user.present? && current_user.admin? %>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

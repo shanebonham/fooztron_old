@@ -5,10 +5,11 @@
   <%= @player.name %>
 </p>
 
-<p>
-  <b>Hidden:</b>
-  <%= @player.hidden %>
-</p>
+<% if @player.hidden? %>
+  <p>
+    <b><%= @player.name %> is hidden.</b>
+  </p>
+<% end %>
 
 <% if current_user.present? and current_user.admin? %>
   <%= link_to 'Edit', edit_player_path(@player) %> |

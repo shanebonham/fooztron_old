@@ -4,7 +4,16 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @players = Player.where(:hidden => false)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @players }
+    end
+  end
+
+  def hidden
+    @players = Player.where(:hidden => true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -75,7 +84,8 @@ class PlayersController < ApplicationController
   # DELETE /players/1.json
   def destroy
     @player = Player.find(params[:id])
-    @player.destroy
+    @player.hidden = true
+    @player.save
 
     respond_to do |format|
       format.html { redirect_to players_url }
