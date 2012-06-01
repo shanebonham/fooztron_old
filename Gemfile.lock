@@ -124,4 +124,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_enum (~> 1.5.1)
   sqlite3
+  typhoeus
   uglifier (>= 1.0.3)

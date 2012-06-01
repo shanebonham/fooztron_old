@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  before_filter :set_destination
+
   # GET /players
   # GET /players.json
   def index

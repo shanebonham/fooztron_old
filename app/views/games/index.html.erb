@@ -13,9 +13,10 @@
     <th>White score</th>
     <th>Blue score</th>
     <th>Spread</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if current_user.present? && current_user.admin? %>
+      <th></th>
+      <th></th>
+    <% end %>
   </tr>
 <% @games.each do |game| %>
   <tr class="winner_<%= game.winner %>">
@@ -28,9 +29,10 @@
     <td class="<%= winner_class game, 'blue' %>"><%= game.blue_score %></td>
     <td><%= game.spread %></td>
 
-    <td><%= link_to 'Show', game %></td>
-    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
+    <% if current_user.present? && current_user.admin? %>
+      <td><%= link_to 'Edit', edit_game_path(game) %></td>
+      <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

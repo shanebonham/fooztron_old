@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :monk_authentication_token, :email, :password
-  attr_accessor :email, :password
+  attr_accessor :password
 
   def login!
     res = MonkId.login!(email: email, password: password)

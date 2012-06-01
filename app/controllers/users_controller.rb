@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  
+
   def new
     @user = User.new
   end
 
   def signin
-    @user = User.new(params[:user])
+    @user = User.find_or_create_by_email(params[:user][:email])
+    @user.password = params[:user][:password]
     if login(@user)
       flash[:notice] = "User signed in with Monk!"
       redirect_to session[:destination]

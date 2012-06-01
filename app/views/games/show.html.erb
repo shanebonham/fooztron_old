@@ -17,5 +17,7 @@
   <%= @game.blue_score %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<% if current_user.present? and current_user.admin? %>
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+<% end %>
 <%= link_to 'Back', games_path %>

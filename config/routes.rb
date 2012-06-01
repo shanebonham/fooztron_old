@@ -3,7 +3,8 @@ Fooztron::Application.routes.draw do
   resources :players
 
   match 'users/login' => 'users#new'
-  match 'users/signin' => 'users#signin'  
+  match 'users/signin' => 'users#signin'
+  match 'users/signout' => 'users#signout'
 
   match 'leaderboard' => 'players#leaderboard'
   match 'leaderboard/:number' => 'players#leaderboard'
