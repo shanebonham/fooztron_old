@@ -2,8 +2,6 @@ class GamesController < ApplicationController
   before_filter :authenticate_user!, :only => [:edit, :update, :destroy]
   before_filter :set_destination
 
-  # GET /games
-  # GET /games.json
   def index
     @games = Game.find(:all, :order => 'created_at DESC')
     @games.each do |g|
@@ -16,8 +14,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # GET /games/1
-  # GET /games/1.json
   def show
     @game = Game.find(params[:id])
     @game.played_positions.sort_by! { |p| p.position_cd }
@@ -28,8 +24,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # GET /games/new
-  # GET /games/new.json
   def new
     @game = Game.new
     @players = Player.all
@@ -43,15 +37,12 @@ class GamesController < ApplicationController
     end
   end
 
-  # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
     @game.played_positions.sort_by! { |p| p.position_cd }
     @players = Player.all
   end
 
-  # POST /games
-  # POST /games.json
   def create
     @game = Game.new(params[:game])
 
@@ -71,8 +62,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # PUT /games/1
-  # PUT /games/1.json
   def update
     @game = Game.find(params[:id])
 
@@ -87,8 +76,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # DELETE /games/1
-  # DELETE /games/1.json
   def destroy
     @game = Game.find(params[:id])
     @game.destroy

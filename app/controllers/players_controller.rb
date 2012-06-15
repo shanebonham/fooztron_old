@@ -2,8 +2,6 @@ class PlayersController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   before_filter :set_destination
 
-  # GET /players
-  # GET /players.json
   def index
     @players = Player.where(:hidden => false)
 
@@ -22,8 +20,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/1
-  # GET /players/1.json
   def show
     @player = Player.find(params[:id])
 
@@ -33,8 +29,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/new
-  # GET /players/new.json
   def new
     @player = Player.new
 
@@ -44,13 +38,10 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/1/edit
   def edit
     @player = Player.find(params[:id])
   end
 
-  # POST /players
-  # POST /players.json
   def create
     @player = Player.new(params[:player])
 
@@ -65,8 +56,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # PUT /players/1
-  # PUT /players/1.json
   def update
     @player = Player.find(params[:id])
 
@@ -81,8 +70,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # DELETE /players/1
-  # DELETE /players/1.json
   def destroy
     @player = Player.find(params[:id])
     @player.hidden = true

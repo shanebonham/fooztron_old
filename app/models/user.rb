@@ -15,5 +15,4 @@ class User < ActiveRecord::Base
     res = MonkId.logout!(authentication_token: monk_authentication_token)
     res['success']
   end
-
 end

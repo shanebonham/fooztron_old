@@ -1,5 +1,5 @@
-  <%= form_for @user, :url => 'signin' do |f| -%>
-    <p><%= f.email_field :email, placeholder: 'Email', class: 'required email' -%></p>
-    <p><%= f.password_field :password, placeholder: 'Password', class: 'required' -%></p>
-    <p><%= f.submit "Sign In" -%></p>
-  <% end -%>
+<%= form_for @user, :url => 'signin' do |f| -%>
+  <p><%= f.email_field :email, placeholder: 'Email', class: 'required email' -%></p>
+  <p><%= f.password_field :password, placeholder: 'Password', class: 'required' -%></p>
+  <p><%= f.submit "Sign In" -%></p>
+<% end -%>
