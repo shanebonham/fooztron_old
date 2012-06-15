@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:edit, :update, :destroy]
   before_filter :set_destination
 
   # GET /games
