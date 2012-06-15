@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fooztron</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= yield %>
-  <% if current_user.present? %>
-    <p>Logged in as <strong><%= current_user.email %></strong> <%= link_to 'Log out', users_signout_path %></p>
-  <% else %>
-    <p><%= link_to 'Log in', users_login_path %></p>
-  <% end %>
-</body>
+  <head>
+    <title>Fooztron</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% flash.each do |type, msg| -%>
+      <div class='message'>
+        <p class="<%= type -%>"><%= msg -%></p>
+      </div>
+    <% end -%>
+
+    <%= yield %>
+
+    <% if current_user.present? %>
+      <p>Logged in as <strong><%= current_user.email %></strong> <%= link_to 'Log out', users_signout_path %></p>
+    <% else %>
+      <p><%= link_to 'Log in', users_login_path %></p>
+    <% end %>
+  </body>
 </html>
