@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find_or_initialize_by_email(params[:user][:email])
     @user.password = params[:user][:password]
     if login(@user)
-      flash[:notice] = "User signed in with Monk!"
+      flash[:notice] = 'User signed in with Monk!'
       redirect_to session[:destination]
     else
       flash[:notice] = "There was a problem logging in: #{@user.errors.full_messages.join(' ')}"
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.logout!
       session[:monk_authentication_token] = nil
-      flash[:notice] = "User signed out with Monk!"
+      flash[:notice] = 'User signed out with Monk!'
       redirect_to :root
     else
       flash[:notice] = "Error signing out your user: #{@user.errors.full_messages}"

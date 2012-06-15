@@ -19,7 +19,7 @@ class Game < ActiveRecord::Base
 
   def one_score_must_be_ten
     if white_score != 10 && blue_score != 10
-      self.errors[:base] << "One score must be 10"
+      self.errors[:base] << 'One score must be 10'
     elsif white_score == blue_score
       self.errors[:base] << "Scores can't be the same"
     end

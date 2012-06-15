@@ -50,7 +50,7 @@ class PlayersController < ApplicationController
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render json: @player, status: :created, location: @player }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class PlayersController < ApplicationController
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
