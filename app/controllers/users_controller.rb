@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def signin
-    @user = User.find_or_create_by_email(params[:user][:email])
+    @user = User.find_or_initialize_by_email(params[:user][:email])
     @user.password = params[:user][:password]
     if login(@user)
       flash[:notice] = "User signed in with Monk!"

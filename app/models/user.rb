@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
     res = MonkId.login!(email: email, password: password)
     if res['success']
       update_attributes(:monk_authentication_token => res['user']['authentication_token'])
+      self.save
     else
       self.errors.add(:base, res['message'])
+      false
     end
   end
 
