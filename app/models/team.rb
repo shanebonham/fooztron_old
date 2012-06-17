@@ -41,4 +41,29 @@ class Team
     end
     teams
   end
+
+  def games
+    this_team = [offense, defense]
+    team_games = []
+    games = Game.all
+    games.each do |game|
+      white_team = []
+      blue_team = []
+      game_positions = []
+      game.played_positions.each do |played_position|
+        case played_position.position
+        when :white_offense
+          white_team[0] = played_position.player
+        when :white_defense
+          white_team[1] = played_position.player
+        when :blue_offense
+          blue_team[0] = played_position.player
+        when :blue_defense
+          blue_team[1] = played_position.player
+        end          
+      end
+      team_games << game if white_team == this_team || blue_team == this_team
+    end
+    team_games
+  end
 end

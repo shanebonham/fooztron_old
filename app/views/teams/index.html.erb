@@ -2,11 +2,13 @@
   <tr>
     <th>Offense</th>
     <th>Defense</th>
+    <th>Games</th>
   </tr>
   <% @teams.each do |team| %>
     <tr>
       <td><%= team.offense.name %></td>
       <td><%= team.defense.name %></td>
+      <td><%= team.games.count %></td>
     </tr>
   <% end %>
 </table>
