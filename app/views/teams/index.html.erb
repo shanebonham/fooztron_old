@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Offense</th>
+    <th>Defense</th>
+  </tr>
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= team[:offense].name %></td>
+      <td><%= team[:defense].name %></td>
+    </tr>
+  <% end %>
+</table>

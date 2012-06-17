@@ -1,5 +1,6 @@
 Fooztron::Application.routes.draw do
   resources :games
+  resources :teams
   resources :players do
     collection do
       get 'hidden'
