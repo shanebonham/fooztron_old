@@ -11,6 +11,7 @@ class Team
   def self.all
     games = Game.all
     teams = []
+    teams_array = []
     games.each do |game|
       white_team = {}
       blue_team = {}
@@ -32,9 +33,12 @@ class Team
       end
       white_team = white_team_offense.merge white_team_defense
       blue_team = blue_team_offense.merge blue_team_defense
-      teams << white_team
-      teams << blue_team
+      teams_array << white_team
+      teams_array << blue_team
     end
-    teams.uniq
+    teams_array.uniq.each do |team|
+      teams << Team.new(team)
+    end
+    teams
   end
 end
