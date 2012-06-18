@@ -24,4 +24,16 @@ class Game < ActiveRecord::Base
       self.errors[:base] << "Scores can't be the same"
     end
   end
+
+  def winning_team
+    team = Team.new
+    if winner == 'white'
+      team.offense = played_positions.where(:position_cd => 0).first.player
+      team.defense = played_positions.where(:position_cd => 1).first.player
+    else
+      team.offense = played_positions.where(:position_cd => 2).first.player
+      team.defense = played_positions.where(:position_cd => 3).first.player
+    end
+    team
+  end
 end

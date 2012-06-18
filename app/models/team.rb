@@ -66,4 +66,12 @@ class Team
     end
     team_games
   end
+
+  def number_of_wins
+    count = 0
+    games.each do |game|
+      count += 1 if game.winning_team.offense == self.offense && game.winning_team.defense == self.defense
+    end
+    count
+  end
 end

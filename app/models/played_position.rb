@@ -8,10 +8,10 @@ class PlayedPosition < ActiveRecord::Base
                      :blue_defense => 3
 
   def winner?
-    team == game.winner
+    color == game.winner
   end
 
-  def team
+  def color
     position.to_s.split('_').first
   end
 
@@ -20,7 +20,7 @@ class PlayedPosition < ActiveRecord::Base
   end
 
   def points_scored
-    if team == "white"
+    if color == "white"
       game.white_score
     else
       game.blue_score
@@ -28,7 +28,7 @@ class PlayedPosition < ActiveRecord::Base
   end
 
   def points_allowed
-    if team == "white"
+    if color == "white"
       game.blue_score
     else
       game.white_score
