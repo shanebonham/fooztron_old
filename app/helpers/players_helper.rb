@@ -37,4 +37,12 @@ module PlayersHelper
   def sorted_by_points_allowed(players)
     players.sort{ |x, y| y.total_points_allowed <=> x.total_points_allowed }
   end
+
+  def sorted_by_number_of_defenders(players)
+    players.sort{ |x, y| y.teams_as_offense.count <=> x.teams_as_offense.count }
+  end
+
+  def sorted_by_number_of_offenders(players)
+    players.sort{ |x, y| y.teams_as_defense.count <=> x.teams_as_defense.count }
+  end
 end

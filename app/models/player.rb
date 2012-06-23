@@ -1,7 +1,8 @@
 class Player < ActiveRecord::Base
   has_many :played_positions
   has_many :games, :through => :played_positions
-  has_many :teams
+  has_many :teams_as_offense, :class_name => 'Team', :foreign_key => :offense_id
+  has_many :teams_as_defense, :class_name => 'Team', :foreign_key => :defense_id
 
   attr_accessible :name, :hidden
 
