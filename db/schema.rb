@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601034619) do
+ActiveRecord::Schema.define(:version => 20120623032701) do
 
   create_table "games", :force => true do |t|
     t.integer   "white_score"
@@ -38,12 +38,30 @@ ActiveRecord::Schema.define(:version => 20120601034619) do
     t.timestamp "updated_at", :null => false
   end
 
+  create_table "team_games", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "game_id"
+    t.integer  "side_cd"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "team_games", ["game_id"], :name => "index_team_games_on_game_id"
+  add_index "team_games", ["team_id"], :name => "index_team_games_on_team_id"
+
+  create_table "teams", :force => true do |t|
+    t.integer  "offense_id"
+    t.integer  "defense_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "monk_authentication_token"
-    t.boolean  "admin"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.string    "email"
+    t.string    "monk_authentication_token"
+    t.boolean   "admin"
+    t.timestamp "created_at",                :null => false
+    t.timestamp "updated_at",                :null => false
   end
 
 end

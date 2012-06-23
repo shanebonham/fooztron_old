@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offense: 1
+  defense: 1
+
+two:
+  offense: 1
+  defense: 1
