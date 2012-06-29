@@ -82,10 +82,17 @@ class PlayersController < ApplicationController
   end
 
   def leaderboard
+    params[:number] ||= 10
+    @teams = []
     @players = []
     @number_of_games = 1
     if params[:number].present?
       @number_of_games = params[:number].to_i
+    end
+    Team.all.each do |team|
+      if team.total_games_played >= @number_of_games / 2
+        @teams << team
+      end
     end
     Player.all.each do |player|
       if player.total_games_played >= @number_of_games

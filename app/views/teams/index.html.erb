@@ -2,6 +2,7 @@
   <tr>
     <th>Offense</th>
     <th>Defense</th>
+    <th>Name</th>
     <th>Games</th>
     <th>Number of Wins</th>
     <th>Record</th>
@@ -10,6 +11,7 @@
     <tr>
       <td><%= team.offense.name %></td>
       <td><%= team.defense.name %></td>
+      <td><%= team.name %></td>
       <td><%= team.games.count %></td>
       <td><%= team.number_of_wins %></td>
       <td><%= sprintf('%.3f', team.number_of_wins.to_f / team.games.count.to_f) %></td>

@@ -13,4 +13,16 @@ class Team < ActiveRecord::Base
     end
     count
   end
+
+  def total_games_played
+    games.count
+  end
+
+  def record
+    number_of_wins / total_games_played.to_f
+  end
+
+  def name
+    "#{offense.name.upcase} and #{defense.name.upcase}"
+  end
 end
