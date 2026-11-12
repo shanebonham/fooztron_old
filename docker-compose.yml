@@ -1,0 +1,17 @@
+# `docker compose up` — then open http://localhost:4010 on every screen in the office.
+services:
+  fooztron:
+    build: .
+    ports:
+      - "4010:4010"
+    volumes:
+      - fooztron-data:/data
+    environment:
+      # Set to `none` for a clean slate instead of simulated demo history.
+      FOOZTRON_SEED: demo
+      # Bring your own coworkers for the demo data:
+      # FOOZTRON_ROSTER: "Alice,Bob,Carol,Dave"
+    restart: unless-stopped
+
+volumes:
+  fooztron-data:
