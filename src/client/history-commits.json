@@ -1,0 +1,428 @@
+[
+ {
+  "hash": "f399b65",
+  "date": "2012-07-12",
+  "author": "Shane Bonham",
+  "message": "Disable old team model"
+ },
+ {
+  "hash": "2ac06c3",
+  "date": "2012-06-28",
+  "author": "Shane Bonham",
+  "message": "Add top teams to leaderboard. #19"
+ },
+ {
+  "hash": "673aee0",
+  "date": "2012-06-22",
+  "author": "Shane Bonham",
+  "message": "Sluttiest players"
+ },
+ {
+  "hash": "88aa134",
+  "date": "2012-06-22",
+  "author": "Shane Bonham",
+  "message": "Add better teams"
+ },
+ {
+  "hash": "be8cbf2",
+  "date": "2012-06-17",
+  "author": "Shane Bonham",
+  "message": "So hacky, but it works. #19"
+ },
+ {
+  "hash": "5288605",
+  "date": "2012-06-17",
+  "author": "Shane Bonham",
+  "message": "Add games method to Team, returning a list of games that team has played. #19"
+ },
+ {
+  "hash": "a1070f3",
+  "date": "2012-06-17",
+  "author": "Shane Bonham",
+  "message": "Use Team objects in Team.all array. #19"
+ },
+ {
+  "hash": "36f7780",
+  "date": "2012-06-16",
+  "author": "Shane Bonham",
+  "message": "Add Team model. #19"
+ },
+ {
+  "hash": "d18c956",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Code formatting"
+ },
+ {
+  "hash": "6ee6f7d",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Fix for too many played_positions on game error"
+ },
+ {
+  "hash": "0df5a1d",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Changes that probably fix monk-id integration but it was a while ago so I can't really remember"
+ },
+ {
+  "hash": "fdae45f",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Code formatting"
+ },
+ {
+  "hash": "638fd0c",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Add authenticate_user! method and before_filters"
+ },
+ {
+  "hash": "3547c1d",
+  "date": "2012-06-14",
+  "author": "Shane Bonham",
+  "message": "Update flash"
+ },
+ {
+  "hash": "72b0797",
+  "date": "2012-06-01",
+  "author": "Shane Bonham",
+  "message": "Link game time games#show (instead of a separate show link)"
+ },
+ {
+  "hash": "e1fa6e0",
+  "date": "2012-06-01",
+  "author": "Shane Bonham",
+  "message": "Make player deletes just set the hidden flag. Fix #23"
+ },
+ {
+  "hash": "b2f45f4",
+  "date": "2012-06-01",
+  "author": "Shane Bonham",
+  "message": "Finish adding monk-id and add some basic authorization. Fix #13"
+ },
+ {
+  "hash": "a1866a2",
+  "date": "2012-05-31",
+  "author": "Etienne de Bruin",
+  "message": "Started monkid integration #13"
+ },
+ {
+  "hash": "c8e1bfd",
+  "date": "2012-05-30",
+  "author": "Shane Bonham",
+  "message": "Come on man, ruby doesn't use semicolons. #21"
+ },
+ {
+  "hash": "a50f0f3",
+  "date": "2012-05-30",
+  "author": "Shane Bonham",
+  "message": "Improve leaderboard so that it's limited to at least one game by default. #21"
+ },
+ {
+  "hash": "1759bbf",
+  "date": "2012-05-30",
+  "author": "Shane Bonham",
+  "message": "Allow leaderboard to be limited to players with more than n games. #21"
+ },
+ {
+  "hash": "5f95b0c",
+  "date": "2012-05-24",
+  "author": "Shane Bonham",
+  "message": "Fix problem where average winning and losing spread would break if player has yet to win or lose"
+ },
+ {
+  "hash": "d2bfba6",
+  "date": "2012-05-24",
+  "author": "Shane Bonham",
+  "message": "Fix leaderboard table headings"
+ },
+ {
+  "hash": "19ff3a0",
+  "date": "2012-05-23",
+  "author": "Shane Bonham",
+  "message": "Add a bunch more stats. Fix #18"
+ },
+ {
+  "hash": "6300544",
+  "date": "2012-05-23",
+  "author": "Shane Bonham",
+  "message": "Add stats for largest average winning/losing spread. Fix #16"
+ },
+ {
+  "hash": "f0e6fc3",
+  "date": "2012-05-23",
+  "author": "Shane Bonham",
+  "message": "Move win percentage to leaderboard. Fix #14"
+ },
+ {
+  "hash": "347c923",
+  "date": "2012-05-23",
+  "author": "Shane Bonham",
+  "message": "Add timezone config so that game dates use the correct time. Fix #15"
+ },
+ {
+  "hash": "b4baa5d",
+  "date": "2012-05-23",
+  "author": "Shane Bonham",
+  "message": "Add /leaderboard as a place for STATS."
+ },
+ {
+  "hash": "6844201",
+  "date": "2012-05-22",
+  "author": "Shane Bonham",
+  "message": "Add win percentage weighted for how often the color wins"
+ },
+ {
+  "hash": "94c4f9c",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Delete associated played positions when games are deleted. Fix #11"
+ },
+ {
+  "hash": "d4750ca",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Put the building of players and played_positions in the else block so it only happens if there is a problem. Fix #12"
+ },
+ {
+  "hash": "7c15059",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Display win percentage in player list and sort by most wins. Fix #9"
+ },
+ {
+  "hash": "219e5ee",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Minor visual improvements to game list"
+ },
+ {
+  "hash": "50603e2",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Add DS_Store files to .gitignore"
+ },
+ {
+  "hash": "9cdcd19",
+  "date": "2012-05-18",
+  "author": "Shane Bonham",
+  "message": "Add date/time to main game list, and sort so latest game is listed first. Fix #7"
+ },
+ {
+  "hash": "0b6398d",
+  "date": "2012-05-17",
+  "author": "Shane Bonham",
+  "message": "Make it easier to see who won in the games list"
+ },
+ {
+  "hash": "080ee97",
+  "date": "2012-05-10",
+  "author": "Shane Bonham",
+  "message": "Add validations for score presence and making sure they don't both equal 10 and that at least one is 10. #8"
+ },
+ {
+  "hash": "c7a91f0",
+  "date": "2012-05-10",
+  "author": "Shane Bonham",
+  "message": "Wrap back link in a p"
+ },
+ {
+  "hash": "4c8dc01",
+  "date": "2012-05-10",
+  "author": "Shane Bonham",
+  "message": "Make button appear big in webkit. #6"
+ },
+ {
+  "hash": "791c2a2",
+  "date": "2012-05-10",
+  "author": "Shane Bonham",
+  "message": "Add more visual/graphical interface to game new screen lol. Fix #6"
+ },
+ {
+  "hash": "e2a0f39",
+  "date": "2012-05-10",
+  "author": "Shane Bonham",
+  "message": "Sort player dropdown alphabetically. Fix #5"
+ },
+ {
+  "hash": "075cfae",
+  "date": "2012-05-09",
+  "author": "Shane Bonham",
+  "message": "Add postgres gem"
+ },
+ {
+  "hash": "fca4f5f",
+  "date": "2012-05-09",
+  "author": "Shane Bonham",
+  "message": "Add sqlite3 gem to development group"
+ },
+ {
+  "hash": "baff2a5",
+  "date": "2012-05-09",
+  "author": "Shane Bonham",
+  "message": "Add link to players on games list and vice versa"
+ },
+ {
+  "hash": "9069778",
+  "date": "2012-05-08",
+  "author": "Shane Bonham",
+  "message": "This sucker now works"
+ },
+ {
+  "hash": "7a9ff02",
+  "date": "2012-05-04",
+  "author": "Shane Bonham",
+  "message": "Add helpers to display player names based on position"
+ },
+ {
+  "hash": "be297aa",
+  "date": "2012-05-03",
+  "author": "Shane Bonham",
+  "message": "Working on getting positions working as enums"
+ },
+ {
+  "hash": "b3447a7",
+  "date": "2012-05-03",
+  "author": "Shane Bonham",
+  "message": "Rename games_players to the more semantic played_positions. Rails will like this better. Run rake db:nuke."
+ },
+ {
+  "hash": "e62a2c7",
+  "date": "2012-05-03",
+  "author": "Shane Bonham",
+  "message": "Move db:nuke task to lib/tasks and add seed"
+ },
+ {
+  "hash": "4ca73ed",
+  "date": "2012-05-03",
+  "author": "Shane Bonham",
+  "message": "Add rake task db:nuke to restart your db with edited migrations"
+ },
+ {
+  "hash": "4ee1660",
+  "date": "2012-04-30",
+  "author": "Etienne de Bruin",
+  "message": "Merge pull request #3 from shanebonham/master"
+ },
+ {
+  "hash": "9e44628",
+  "date": "2012-04-30",
+  "author": "Shane Bonham",
+  "message": "Fix seeds so that game_players are set up correctly"
+ },
+ {
+  "hash": "8afddf3",
+  "date": "2012-04-26",
+  "author": "Etienne de Bruin",
+  "message": "Moved to map table for game and player associations"
+ },
+ {
+  "hash": "a761744",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "Merge pull request #2 from shanebonham/master"
+ },
+ {
+  "hash": "f7fb090",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add instance variable for players to Games#edit (although currently it does not work as expected because the proper player isn't selected)"
+ },
+ {
+  "hash": "aff3434",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add player name to game list (instead of object reference)"
+ },
+ {
+  "hash": "fb6129f",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add scores to seeds"
+ },
+ {
+  "hash": "b042113",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add seeds for players and a game"
+ },
+ {
+  "hash": "3dc3723",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Remove score migration and add to original game migration. Also change data type to integer"
+ },
+ {
+  "hash": "447a5e7",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Make game attributes accessible"
+ },
+ {
+  "hash": "19dc33b",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add dropdowns for player names and game scores"
+ },
+ {
+  "hash": "c14fce5",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Point root at Games#index"
+ },
+ {
+  "hash": "7d7e4f0",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add associations to Player and Game models"
+ },
+ {
+  "hash": "bf345b2",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Add hidden attribute to player"
+ },
+ {
+  "hash": "a45c4ba",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "Fixed schema after merge"
+ },
+ {
+  "hash": "50576dc",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "Fix merge"
+ },
+ {
+  "hash": "3f054c2",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "Added Game Scaffold"
+ },
+ {
+  "hash": "3014dbc",
+  "date": "2012-04-25",
+  "author": "Shane Bonham",
+  "message": "Added player scaffold"
+ },
+ {
+  "hash": "9a1eba8",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "Testing commits"
+ },
+ {
+  "hash": "94bb7c4",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "rails noo"
+ },
+ {
+  "hash": "fbc4842",
+  "date": "2012-04-25",
+  "author": "Etienne de Bruin",
+  "message": "initial commit"
+ }
+]
