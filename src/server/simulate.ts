@@ -7,9 +7,9 @@ import type { Lineup, NewEvent, Rod, Side } from '../shared/types.ts';
 import { POSITIONS, WINNING_SCORE } from '../shared/types.ts';
 
 export const DEFAULT_ROSTER = [
-  'Rodney',
-  'Priya',
-  'Gus',
+  'Shane',
+  'Etienne',
+  'Daniel',
   'Maeve',
   'Tobias',
   'Yuki',
